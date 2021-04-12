@@ -100,6 +100,9 @@ if ( ! function_exists( 'prestige_puzzles_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		// Add wc support
+        add_theme_support( 'woocommerce' );
 	}
 endif;
 add_action( 'after_setup_theme', 'prestige_puzzles_setup' );
@@ -178,3 +181,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+// Remove breadcrumbs
+add_action( 'init', 'woo_remove_wc_breadcrumbs' );
+function woo_remove_wc_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
