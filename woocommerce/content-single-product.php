@@ -34,76 +34,92 @@ if ( post_password_required() ) {
 ?>
 
 <div class="section-horizontal section-horizontal-purple">
-    <h1>Congratulations! For completing your puzzle!</h1>
-    <h2> Once you've finished oohing! and aahing! over your puzzle — it's time to decide on your puzzle's trim color. </h2>
-    <br />
-    <h2>Do you want to:</h2>
-    <div class="section-color-bullets">
-        <div class="color-bullet collor-bullet-purple">
-            blend the trim with the puzzles's picture?
-        </div>
-        <div class="color-bullet collor-bullet-blue">
-            match the edging to a specific room's decor?
-        </div>
-        <div class="color-bullet collor-bullet-yellow">
-            add some classic or vibrant color?
+    <div class="section-horizontal-content">
+        <h1 class="mb-5">
+            Congratulations! For completing your puzzle!
+        </h1>
+        <h2>
+            Once you've finished oohing! and aahing! over your puzzle — it's time to decide on your puzzle's trim color.
+        </h2>
+        <br />
+        <h2 class="mb-5">
+            Do you want to:
+        </h2>
+        <div class="section-color-bullets">
+            <div class="color-bullet color-bullet-purple">
+                blend the trim with the puzzles's picture?
+            </div>
+            <div class="color-bullet color-bullet-blue">
+                match the edging to a specific room's decor?
+            </div>
+            <div class="color-bullet color-bullet-yellow">
+                add some classic or vibrant color?
+            </div>
         </div>
     </div>
 </div>
 
 <div class="section-horizontal">
-    <div class="header-numbered">
-        <div class="header-numbered-number header-numbered-number-purple">
-            1
-        </div>
-        <h3> Choose your color trim</h3>
+    <div class="section-horizontal-content">
+        <div class="header-numbered">
+            <div class="header-numbered-number header-numbered-number-purple">
+                1
+            </div>
+            <h3> Choose your color trim</h3>
 
-        <div class="section-horizontal-text">
-            With 29 color choices, you're sure to find the one! (Don't worry, if down
-            the road you decide to switch colors, we can do that too!)
+            <div class="section-horizontal-text">
+                With 29 color choices, you're sure to find the one! (Don't worry, if down
+                the road you decide to switch colors, we can do that too!)
+            </div>
+
+            <div class="swatches-color">
+                TODO
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-horizontal">
+    <div class="section-horizontal-content">
+        <div class="header-numbered">
+            <div class="header-numbered-number header-numbered-number-yellow">
+                2
+            </div>
+            <h3> Select your puzzle's sizing to calculate pricing </h3>
         </div>
 
-        <div class="swatches-color">
+        <div class="swatches-size">
             TODO
         </div>
+
+        <div class="section-horizontal-text-small">
+            <p>
+                Don't see your size? We do custom-sized puzzles too!
+            </p>
+            <p>
+                To price your custom size -> <a href="#">Contact Us</a>
+            </p>
+        </div>
     </div>
 </div>
 
 <div class="section-horizontal">
-    <div class="header-numbered">
-        <div class="header-numbered-number header-numbered-number-purple">
-            2
-        </div>
-        <h3> Select your puzzle's sizing to calculate pricing </h3>
-    </div>
+    <div class="section-horizontal-content">
+        <h3 class="mb-4">
+            Calculated price:
+        </h3>
 
-    <div class="swatches-size">
-        TODO
-    </div>
-
-    <div class="section-horizontal-text-small">
-        <p>
-            Don't see your size? We do custom-sized puzzles too!
-        </p>
-        <p>
-            To price your custom size -> <a href="#">Contact Us</a>
-        </p>
-    </div>
-</div>
-
-<div class="">
-    <h3> Calculated price: </h3>
-
-    <div class="swatches-price">
-        <div class="swatches-price-number-holder">
-            <span class="swatches-price-number">
-                $48
-            </span>
-        </div>
-        <div class="swatches-price-button-holder">
-            <a href="#" class="swatches-price-button">
-                Add to cart
-            </a>
+        <div class="swatches-price">
+            <div class="swatches-price-number-holder">
+                <span class="swatches-price-number">
+                    $48
+                </span>
+            </div>
+            <div class="swatches-price-button-holder">
+                <a href="#" class="swatches-price-button">
+                    Add to cart
+                </a>
+            </div>
         </div>
     </div>
 </div>
