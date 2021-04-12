@@ -9,6 +9,8 @@
  * @package Prestige_Puzzles
  */
 
+
+$theme_uri = get_template_directory_uri();
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -17,15 +19,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <!-- Initial CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <!--/Initial CSS -->
+
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
+
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'prestige-puzzles' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
+        <div class="top-panel">
+            <p>FLAT RATE SHIPPING IN CONTINENTAL USA! $10 BACK & FORTH</p>
+        </div>
+
+        <?php if (1==0):?>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -44,16 +61,48 @@
 				<p class="site-description"><?php echo $prestige_puzzles_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
+        <?php endif;?>
 
-		<nav id="site-navigation" class="main-navigation">
+		<!--nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prestige-puzzles' ); ?></button>
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
+			//wp_nav_menu(
+			//	array(
+			//		'theme_location' => 'menu-1',
+			//		'menu_id'        => 'primary-menu',
+			//	)
+			//);
 			?>
-		</nav><!-- #site-navigation -->
+		</nav--><!-- #site-navigation -->
+        <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="logo">
+                    <a href="#"><img src="<?=$theme_uri?>/img/Logo1.svg" class="img-fluid" alt=""></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">How to ship to us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item frame">
+                            <a class="nav-link" href="#">Frame my puzzle</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
 	</header><!-- #masthead -->
