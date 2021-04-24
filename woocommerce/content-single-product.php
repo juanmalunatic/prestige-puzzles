@@ -28,8 +28,8 @@ global $product;
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
-	echo get_the_password_form(); // WPCS: XSS ok.
-	return;
+  echo get_the_password_form(); // WPCS: XSS ok.
+  return;
 }
 ?>
 
@@ -73,7 +73,35 @@ if ( post_password_required() ) {
             </div>
 
             <div class="swatches-color">
-                TODO
+                <?php
+                $items = [
+                    ['code' => 'M03', 'name' => 'Marble White'],
+                    ['code' => 'M10', 'name' => 'Marble Canyon Black'],
+                    ['code' => 'M14', 'name' => 'Marble Gray'],
+                    ['code' => 'M16', 'name' => 'Marble Dark Gray'],
+                    ['code' => 'M18', 'name' => 'Marble Blue Black'],
+                ];
+                foreach ($items as $item):
+                ?>
+                <div class="swatches-color-item swatches-color-item-selectable">
+                    <div class="swatches-color-item-holder">
+                        <div class="swatches-color-item-selected-decorator"></div>
+                        <div class="swatches-color-item-image">
+                            <!-- Image here -->
+                        </div>
+                        <div class="swatches-color-item-texts">
+                            <div class="swatches-color-item-code">
+                                <?=$item['code']?>
+                            </div>
+                            <div class="swatches-color-item-name">
+                                <?=$item['name']?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                endforeach;
+                ?>
             </div>
         </div>
     </div>
@@ -89,7 +117,35 @@ if ( post_password_required() ) {
         </div>
 
         <div class="swatches-size">
-            TODO
+            <?php
+            $items = [
+                ['code' =>  '64', 'size' =>   '8 x 8'],
+                ['code' => '143', 'size' => '11 x 14'],
+                ['code' => '247', 'size' => '13 x 19'],
+                ['code' => '280', 'size' => '14 x 20'],
+                ['code' => '288', 'size' => '12 x 24'],
+                ['code' => '320', 'size' => '16 x 20'],
+                ['code' => '400', 'size' => '20 x 20'],
+            ];
+            foreach ($items as $item):
+            ?>
+                <div class="swatches-size-item swatches-size-item-selectable">
+                    <div class="swatches-size-item-holder">
+                        <div class="swatches-size-item-selected-decorator"></div>
+                        <div class="swatches-size-item-texts">
+                            <div class="swatches-size-item-code">
+                                <?=$item['code']?>
+                            </div>
+                            <div class="swatches-size-item-size">
+                                <?=$item['size']?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endforeach;
+            ?>
+
         </div>
 
         <div class="section-horizontal-text-small mt-5">
