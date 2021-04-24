@@ -38,7 +38,7 @@ if ( post_password_required() ) {
         <h1 class="mb-5">
             Congratulations! For completing your puzzle!
         </h1>
-        <h2>
+        <h2 class="pt-4">
             Once you've finished oohing! and aahing! over your puzzle — it's time to decide on your puzzle's trim color.
         </h2>
         <br />
@@ -67,7 +67,7 @@ if ( post_password_required() ) {
             </div>
             <h3> Choose your color trim</h3>
 
-            <div class="section-horizontal-text">
+            <div class="section-horizontal-text-large mt-5 mb-5">
                 With 29 color choices, you're sure to find the one! (Don't worry, if down
                 the road you decide to switch colors, we can do that too!)
             </div>
@@ -81,18 +81,18 @@ if ( post_password_required() ) {
 
 <div class="section-horizontal">
     <div class="section-horizontal-content">
-        <div class="header-numbered">
+        <div class="header-numbered mb-5">
             <div class="header-numbered-number header-numbered-number-yellow">
                 2
             </div>
-            <h3> Select your puzzle's sizing to calculate pricing </h3>
+            <h3> Select your puzzle's sizing to calculate pricing: </h3>
         </div>
 
         <div class="swatches-size">
             TODO
         </div>
 
-        <div class="section-horizontal-text-small">
+        <div class="section-horizontal-text-small mt-5">
             <p>
                 Don't see your size? We do custom-sized puzzles too!
             </p>

@@ -54,7 +54,7 @@ $theme_uri = get_template_directory_uri();
                     <li>718-686-7411</li>
                     <li>4208 14th Ave</li>
                     <li>Brooklyn NY 11219</li>
-                    <li>PreserveyourPuzzle@gmail.com</li>
+                    <li>PreserveyourPuzzle<wbr />@gmail.com</li>
                 </ul>
             </div>
             <div class="footer-column">

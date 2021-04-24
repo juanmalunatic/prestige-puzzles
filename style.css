@@ -1881,11 +1881,7 @@ input, input:focus, button:focus {
 
 /**
 Fixes to account for _s styles
- */
-
-/**
-Fixes to account for _'s styles
-**/
+*/
 
 html {
 	width:100%;
@@ -1903,4 +1899,237 @@ html {
 	padding-left: 6px;
 	padding-right: 6px;
 	padding-top: 1px;
+}
+/**
+Site-wide custom styles
+ */
+:root {
+	--p-purple: #dacde2;
+	--p-blue: #d0ebf8;
+	--p-yellow: #faf0d5;
+
+	--p-purple-dark:#85599d;
+	--p-yellow-dark:#ecc36a;
+}
+
+.navbar {
+	margin-bottom: auto;
+}
+
+.section-horizontal {
+	padding-top: 80px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 80px;
+}
+
+.section-horizontal-purple {
+	background: #faf7fc;
+}
+
+.section-horizontal-content {
+	max-width: 540px;
+	margin: 0 auto;
+	padding-left : 11%;
+	padding-right: 11%;
+}
+
+@media only screen and (min-width: 768px) {
+	.section-horizontal-content {
+		max-width: 720px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.section-horizontal-content {
+		max-width: 960px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.section-horizontal-content {
+		max-width: 1140px;
+	}
+}
+
+.section-horizontal {
+	font-size: 1.1rem;
+}
+
+.section-horizontal h1 {
+	font-size: 2.2rem;
+}
+
+.section-horizontal h2 {
+	font-size: 1.9rem;
+	line-height:1.5;
+}
+
+.section-horizontal-text-large {
+	font-size: 1.4rem;
+}
+
+.section-horizontal-text-small {
+	font-size: 1.1rem;
+}
+
+.section-horizontal a {
+	color: var(--p-purple-dark);
+	text-decoration: underline;
+}
+.section-horizontal a:hover {
+	color: var(--p-purple-dark);
+	opacity: 0.8;
+}
+
+.footer-column ul li,
+.footer-column ul li a,
+.footer-column p {
+	font-size: 0.9rem;
+}
+
+
+/**
+"Frame my puzzle"
+ */
+
+.color-bullet {
+	position: relative;
+	margin-left: 60px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+}
+
+.color-bullet::before {
+	content:'';
+	--background-color: #f90;
+	border-radius: 50%;
+	display: block;
+	height: 33px;
+	width: 33px;
+	position:absolute;
+	left: 0px;
+	top: -6px;
+}
+
+.color-bullet-purple::before {
+	background-color: var(--p-purple);
+}
+.color-bullet-blue::before {
+	background-color: var(--p-blue);
+}
+.color-bullet-yellow::before {
+	background-color: var(--p-yellow);
+}
+
+.header-numbered {
+	position: relative;
+}
+
+.header-numbered-number {
+	font-family: 'Aclonica', sans-serif;
+
+	--size: 70px;
+	background-color: #f90;
+	border-radius: 50%;
+	width: var(--size);
+	height: var(--size);
+	position: absolute;
+	top: -15px;
+	left: calc(-1 * (var(--size) + 40px));
+
+	line-height: var(--size);
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	padding-left: 3px;
+	padding-top: 1px;
+}
+
+.header-numbered-number-purple {
+	background-color: var(--p-purple);
+	color: var(--p-purple-dark);
+}
+
+.header-numbered-number-yellow {
+	background-color: var(--p-yellow);
+	color: var(--p-yellow-dark);
+}
+
+.swatches-price {
+	--padding-outer: 15%;
+	--padding-inner: 30px;
+
+	background: var(--p-yellow);
+	height: 200px;
+	border-radius: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.swatches-price-number-holder {
+	--background: #f00;
+	display: flex;
+	padding-left:  var(--padding-outer);
+	padding-right: var(--padding-inner);
+}
+
+.swatches-price-number{
+	--background: #069;
+	width: 100%;
+	font-size: 3.8rem;
+	font-weight: 500;
+}
+
+.swatches-price-button-holder {
+	--background: #f90;
+	width: 50%;
+	padding-right: var(--padding-outer);
+	--padding-left : var(--padding-inner);
+}
+
+.swatches-price-button {
+	--height: 70px;
+	--padding-sides: 20px;
+
+	padding-left:  var(--padding-sides);
+	padding-right: var(--padding-sides);
+	display: block;
+	line-height: var(--height);
+	height: var(--height);
+	background: var(--p-purple-dark);
+	border-radius: 40px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+
+}
+
+.section-horizontal .swatches-price-button {
+	color: #fff;
+	text-decoration: none;
+}
+
+.section-horizontal .swatches-price-button:hover {
+	color: #fff;
+	text-decoration: underline;
+	opacity: 0.9;
+}
+
+.swatches-color {
+	background: #f00;
+	width: 100%;
+	height: 500px;
+	margin-top   : 75px;
+	margin-bottom: -75px;
+
+}
+.swatches-size {
+	background: #f90;
+	width: 100%;
+	height: 500px;
+	margin-top : 75px;
 }
