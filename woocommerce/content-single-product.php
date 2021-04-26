@@ -78,31 +78,25 @@ $variation_options = format_variation_attributes($variation_attributes);
 
             <div class="swatches-color">
                 <?php
-                $items = [
-                    ['code' => 'M03', 'name' => 'Marble White'],
-                    ['code' => 'M10', 'name' => 'Marble Canyon Black'],
-                    ['code' => 'M14', 'name' => 'Marble Gray'],
-                    ['code' => 'M16', 'name' => 'Marble Dark Gray'],
-                    ['code' => 'M18', 'name' => 'Marble Blue Black'],
-                ];
+                $items = $variation_options['colors'];
                 foreach ($items as $item):
                 ?>
-                <div class="swatches-color-item swatches-color-item-selectable">
-                    <div class="swatches-color-item-holder">
-                        <div class="swatches-color-item-selected-decorator"></div>
-                        <div class="swatches-color-item-image">
-                            <!-- Image here -->
-                        </div>
-                        <div class="swatches-color-item-texts">
-                            <div class="swatches-color-item-code">
-                                <?=$item['code']?>
+                    <div class="swatches-color-item swatches-color-item-selectable" data-value="<?=$item['value']?>">
+                        <div class="swatches-color-item-holder">
+                            <div class="swatches-color-item-selected-decorator"></div>
+                            <div class="swatches-color-item-image">
+                                <!-- Image here -->
                             </div>
-                            <div class="swatches-color-item-name">
-                                <?=$item['name']?>
+                            <div class="swatches-color-item-texts">
+                                <div class="swatches-color-item-code">
+                                    <?=$item['part_one']?>
+                                </div>
+                                <div class="swatches-color-item-name">
+                                    <?=$item['part_two']?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php
                 endforeach;
                 ?>
@@ -122,26 +116,18 @@ $variation_options = format_variation_attributes($variation_attributes);
 
         <div class="swatches-size">
             <?php
-            $items = [
-                ['code' =>  '64', 'size' =>   '8 x 8'],
-                ['code' => '143', 'size' => '11 x 14'],
-                ['code' => '247', 'size' => '13 x 19'],
-                ['code' => '280', 'size' => '14 x 20'],
-                ['code' => '288', 'size' => '12 x 24'],
-                ['code' => '320', 'size' => '16 x 20'],
-                ['code' => '400', 'size' => '20 x 20'],
-            ];
+            $items = $variation_options['sizes'];
             foreach ($items as $item):
             ?>
-                <div class="swatches-size-item swatches-size-item-selectable">
+                <div class="swatches-size-item swatches-size-item-selectable" data-value="<?=$item['value']?>">
                     <div class="swatches-size-item-holder">
                         <div class="swatches-size-item-selected-decorator"></div>
                         <div class="swatches-size-item-texts">
                             <div class="swatches-size-item-code">
-                                <?=$item['code']?>
+                                <?=$item['part_one']?>
                             </div>
                             <div class="swatches-size-item-size">
-                                <?=$item['size']?>
+                                <?=$item['part_two']?>
                             </div>
                         </div>
                     </div>

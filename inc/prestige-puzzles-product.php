@@ -12,16 +12,16 @@ function format_variation_attributes(array $variation_attributes): array
     $sizes  = [];
     foreach( $variation_attributes as $attribute_name => $attribute_values) {
         foreach($attribute_values as $attribute_key => $attribute_string) {
-
+            // Store initial value
+            $data = [
+                'key'      => $attribute_key,
+                'value'    => $attribute_string,
+            ];
             // Strip until first "-"
             $attribute_array = explode('-', $attribute_string);
             $part_one = array_shift($attribute_array);
-            $part_one = mb_strtoupper(substr($part_one, 0, strlen($part_one) - 1));
-
-            $data = [
-                'key'      => $attribute_key,
-                'part_one' => $part_one,
-            ];
+            $part_one = mb_strtoupper(substr($part_one, 0, strlen($part_one)));
+            $data['part_one'] = $part_one;
 
             if ($attribute_name === 'pa_color') {
                 $data['part_two'] = format_color_variations($attribute_array);
