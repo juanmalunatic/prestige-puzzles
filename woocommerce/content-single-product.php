@@ -47,7 +47,7 @@ if ( post_password_required() ) {
         </h2>
         <div class="section-color-bullets">
             <div class="color-bullet color-bullet-purple">
-                blend the trim with the puzzles's picture?
+                blend the trim with the puzzle's picture?
             </div>
             <div class="color-bullet color-bullet-blue">
                 match the edging to a specific room's decor?
