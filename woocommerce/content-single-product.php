@@ -31,6 +31,10 @@ if ( post_password_required() ) {
   echo get_the_password_form(); // WPCS: XSS ok.
   return;
 }
+
+require dirname(__FILE__) . '/../inc/prestige-puzzles-product.php';
+$variation_attributes = $product->get_variation_attributes();
+$variation_options = format_variation_attributes($variation_attributes);
 ?>
 
 <div class="section-horizontal section-horizontal-purple">
