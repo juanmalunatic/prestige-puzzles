@@ -32,9 +32,21 @@ if ( post_password_required() ) {
   return;
 }
 
+// This include contains all of the theme's custom functions.
 require dirname(__FILE__) . '/../inc/prestige-puzzles-product.php';
+
+// Fetch the relevant attributes for the product's variations and format them
+// This is used on the pickers
+// (Color: M03 - Marble White; Size: 143 - 11 x 14)
 $variation_attributes = $product->get_variation_attributes();
 $variation_options = format_variation_attributes($variation_attributes);
+
+// Fetch the actual product variations which contain the prices,
+// subset it to only get what's needed, and store it in a data attribute.
+$available_variations   = $product->get_available_variations();
+$variations_with_prices = subset_variations_prices($available_variations);
+$var_with_prices_json   = array_to_jsondata($variations_with_prices);
+
 ?>
 
 <div class="section-horizontal section-horizontal-purple">
@@ -78,10 +90,10 @@ $variation_options = format_variation_attributes($variation_attributes);
 
             <div class="swatches-color">
                 <?php
-                $items = $variation_options['colors'];
-                foreach ($items as $item):
+                $colors = $variation_options['colors'];
+                foreach ($colors as $color):
                 ?>
-                    <div class="swatches-color-item swatches-color-item-selectable" data-value="<?=$item['value']?>">
+                    <div class="swatches-color-item swatches-color-item-selectable" data-value="<?=$color['value']?>">
                         <div class="swatches-color-item-holder">
                             <div class="swatches-color-item-selected-decorator"></div>
                             <div class="swatches-color-item-image">
@@ -89,10 +101,10 @@ $variation_options = format_variation_attributes($variation_attributes);
                             </div>
                             <div class="swatches-color-item-texts">
                                 <div class="swatches-color-item-code">
-                                    <?=$item['part_one']?>
+                                    <?=$color['part_one']?>
                                 </div>
                                 <div class="swatches-color-item-name">
-                                    <?=$item['part_two']?>
+                                    <?=$color['part_two']?>
                                 </div>
                             </div>
                         </div>
@@ -116,18 +128,18 @@ $variation_options = format_variation_attributes($variation_attributes);
 
         <div class="swatches-size">
             <?php
-            $items = $variation_options['sizes'];
-            foreach ($items as $item):
+            $sizes = $variation_options['sizes'];
+            foreach ($sizes as $size):
             ?>
-                <div class="swatches-size-item swatches-size-item-selectable" data-value="<?=$item['value']?>">
+                <div class="swatches-size-item swatches-size-item-selectable" data-value="<?=$size['value']?>">
                     <div class="swatches-size-item-holder">
                         <div class="swatches-size-item-selected-decorator"></div>
                         <div class="swatches-size-item-texts">
                             <div class="swatches-size-item-code">
-                                <?=$item['part_one']?>
+                                <?=$size['part_one']?>
                             </div>
                             <div class="swatches-size-item-size">
-                                <?=$item['part_two']?>
+                                <?=$size['part_two']?>
                             </div>
                         </div>
                     </div>
@@ -155,61 +167,80 @@ $variation_options = format_variation_attributes($variation_attributes);
             Calculated price:
         </h3>
 
-        <div class="swatches-price">
-            <div class="swatches-price-number-holder">
-                <span class="swatches-price-number">
-                    $48
-                </span>
+        <form
+          id="cart_form"
+          data-color=""
+          data-size=""
+          data-prices="<?=$var_with_prices_json?>"
+          data-product_id="<?=absint($product->get_id());?>"
+          action="<?=esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+            <div class="swatches-price">
+                <div class="swatches-price-number-holder">
+                    <span class="swatches-price-number">
+                        $48
+                    </span>
+                </div>
+                <div class="swatches-price-button-holder">
+                    <a href="#" class="swatches-price-button">
+                        Add to cart
+                    </a>
+                </div>
             </div>
-            <div class="swatches-price-button-holder">
-                <a href="#" class="swatches-price-button">
-                    Add to cart
-                </a>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
+<?php
+// Don't run this code, this is just for reference:
+if (0 === 1):
+?>
+    <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
-	<div class="summary entry-summary">
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
-	</div>
+        <?php
+        /**
+         * Hook: woocommerce_before_single_product_summary.
+         *
+         * @hooked woocommerce_show_product_sale_flash - 10
+         * @hooked woocommerce_show_product_images - 20
+         */
+        do_action( 'woocommerce_before_single_product_summary' );
+        ?>
 
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
-</div>
+        <div class="summary entry-summary">
+            <?php
+            /**
+             * Hook: woocommerce_single_product_summary.
+             *
+             * @hooked woocommerce_template_single_title - 5
+             * @hooked woocommerce_template_single_rating - 10
+             * @hooked woocommerce_template_single_price - 10
+             * @hooked woocommerce_template_single_excerpt - 20
+             * @hooked woocommerce_template_single_add_to_cart - 30
+             * @hooked woocommerce_template_single_meta - 40
+             * @hooked woocommerce_template_single_sharing - 50
+             * @hooked WC_Structured_Data::generate_product_data() - 60
+             */
+            do_action( 'woocommerce_single_product_summary' );
+            ?>
+        </div>
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+        <?php
+        /**
+         * Hook: woocommerce_after_single_product_summary.
+         *
+         * @hooked woocommerce_output_product_data_tabs - 10
+         * @hooked woocommerce_upsell_display - 15
+         * @hooked woocommerce_output_related_products - 20
+         */
+        do_action( 'woocommerce_after_single_product_summary' );
+        ?>
+    </div>
+
+    <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+<?php
+endif;

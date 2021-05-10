@@ -77,3 +77,35 @@ function format_size_variations(array $attribute_array): string
     // Implode array
     return implode(' x ', $attribute_array);
 }
+
+/**
+ * @param array $available_variations
+ * @return array
+ */
+function subset_variations_prices(array $available_variations)
+{
+    $a = "b";
+
+    $variations = [];
+    foreach ($available_variations as $index => $data) {
+        $variations[] = [
+            'color' => $data['attributes']['attribute_pa_color'],
+            'size'  => $data['attributes']['attribute_pa_size'],
+            'price' => $data['display_price'],
+        ];
+    }
+    return $variations;
+}
+
+/**
+ * @param array $assocArray
+ * @return string
+ */
+function array_to_jsondata (array $assocArray) {
+    $json    = wp_json_encode( $assocArray );
+    $encoded = function_exists( 'wc_esc_json' ) ?
+        wc_esc_json($json) :
+        _wp_specialchars($json, ENT_QUOTES, 'UTF-8', true );
+
+    return $encoded;
+}
