@@ -167,12 +167,15 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
             Calculated price:
         </h3>
 
+        <?php
+        $product_id = absint($product->get_id());
+        ?>
         <form
           id="cart_form"
           data-color=""
           data-size=""
           data-prices="<?=$var_with_prices_json?>"
-          data-product_id="<?=absint($product->get_id());?>"
+          data-product_id="<?=$product_id?>"
           action="<?=esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
           method="post"
           enctype="multipart/form-data"
@@ -184,11 +187,20 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
                     </span>
                 </div>
                 <div class="swatches-price-button-holder">
-                    <a href="#" class="swatches-price-button">
+                    <a href="#" class="swatches-price-button" id="submit_form">
                         Add to cart
                     </a>
                 </div>
             </div>
+
+            <input type="hidden" name="quantity"     value="1" />
+            <input type="hidden" name="add-to-cart"  value="<?=$product_id?>" />
+            <input type="hidden" name="product_id"   value="<?=$product_id?>" />
+            <input type="hidden" name="variation_id" value="" id="form_variation_id">
+
+            <input type="hidden" name="attribute_pa_color" value="" id="form_color"/>
+            <input type="hidden" name="attribute_pa_size"  value="" id="form_size" />
+
         </form>
     </div>
 </div>
@@ -196,7 +208,7 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
 
 <?php
 // Don't run this code, this is just for reference:
-if (0 === 1):
+if (1 === 1):
 ?>
     <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 

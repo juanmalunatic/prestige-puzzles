@@ -84,14 +84,13 @@ function format_size_variations(array $attribute_array): string
  */
 function subset_variations_prices(array $available_variations)
 {
-    $a = "b";
-
     $variations = [];
     foreach ($available_variations as $index => $data) {
         $variations[] = [
-            'color' => $data['attributes']['attribute_pa_color'],
-            'size'  => $data['attributes']['attribute_pa_size'],
-            'price' => $data['display_price'],
+            'variation_id' => $data['variation_id'],
+            'color'        => $data['attributes']['attribute_pa_color'],
+            'size'         => $data['attributes']['attribute_pa_size'],
+            'price'        => $data['display_price'],
         ];
     }
     return $variations;

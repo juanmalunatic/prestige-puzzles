@@ -2250,6 +2250,11 @@ Site-wide custom styles
     margin-right: 7px;
     margin-top: 15px;
     margin-bottom: 15px;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
 }
 
 .swatches-color-item-code {
@@ -2298,6 +2303,11 @@ Site-wide custom styles
     height: var(--item-height);
     padding-right: 10px;
     padding-left: 10px;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
 }
 
 .swatches-size-item-code {
