@@ -86,19 +86,19 @@ $theme_uri = get_template_directory_uri();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">How to ship to us</a>
+                            <a class="nav-link" href="/ship-to-us">How to ship to us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="/contact">Contact</a>
                         </li>
                         <li class="nav-item frame">
-                            <a class="nav-link" href="#">Frame my puzzle</a>
+                            <a class="nav-link" href="/shop/puzzle">Plaque my puzzle</a>
                         </li>
                     </ul>
                 </div>
