@@ -83,6 +83,16 @@ function hideHoverStyle(el, swatch_type) {
 }
 
 $(document).ready(function() {
+
+  var form_selector = "#cart_form";
+  // Only run woocommerce fx on woocommerce page
+  if ($(form_selector).length > 0) {
+    enable_woocommerce_functionality();
+  }
+});
+
+function enable_woocommerce_functionality () {
+
   // Store form selector, which stores all state
   var form_selector = "#cart_form";
 
@@ -115,8 +125,7 @@ $(document).ready(function() {
     e.preventDefault();
     $("#cart_form").submit();
   });
-
-});
+}
 
 function update_woocommerce_price() {
 
