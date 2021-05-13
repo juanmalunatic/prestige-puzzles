@@ -108,3 +108,31 @@ function array_to_jsondata (array $assocArray) {
 
     return $encoded;
 }
+
+function sort_sizes_by_area($sizes)
+{
+    // Area is just part_one, the multiplication of AxB lol.
+    $ret_sizes = $sizes;
+    usort($ret_sizes, function(array $a, array $b) {
+
+        /*
+        // Take "part_two", which contains "A x B", and extract the numbers
+        $a_parts = explode("x", $a['part_two']);
+        $b_parts = explode("x", $b['part_two']);
+        $a_area = (int)$a_parts[0] * (int)$a_parts[1];
+        $b_area = (int)$b_parts[0] * (int)$b_parts[1];
+        */
+
+        // Previous code is unnecessary, as area is part_one already.
+        $a_area = (int)$a['part_one'];
+        $b_area = (int)$b['part_one'];
+
+        if ($a_area === $b_area) {
+            return 0;
+        }
+        return ($a_area < $b_area) ? -1 : 1;
+
+    });
+
+    return $ret_sizes;
+}

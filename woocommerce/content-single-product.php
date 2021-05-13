@@ -131,7 +131,8 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
         <div class="swatches-size">
             <?php
             $sizes = $variation_options['sizes'];
-            foreach ($sizes as $size):
+            $sizes_ordered = sort_sizes_by_area($sizes);
+            foreach ($sizes_ordered as $size):
             ?>
                 <div class="swatches-size-item swatches-size-item-selectable" data-value="<?=$size['value']?>">
                     <div class="swatches-size-item-holder">
