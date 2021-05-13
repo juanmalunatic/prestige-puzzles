@@ -130,7 +130,9 @@ function update_woocommerce_price() {
   var size  = $(form_selector).attr("data-size");
   var price_data = JSON.parse($(form_selector).attr("data-prices"));
 
-  var price_item = price_data.find(item => (item.color === color) && (item.size === size));
+  // Old selector for when color changes price
+  // var price_item = price_data.find(item => (item.color === color) && (item.size === size));
+  var price_item = price_data.find(item => item.size === size);
 
   if (price_item) {
     target_price.html("$" + price_item.price);

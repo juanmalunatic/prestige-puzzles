@@ -88,7 +88,7 @@ function subset_variations_prices(array $available_variations)
     foreach ($available_variations as $index => $data) {
         $variations[] = [
             'variation_id' => $data['variation_id'],
-            'color'        => $data['attributes']['attribute_pa_color'],
+            //'color'        => $data['attributes']['attribute_pa_color'], //only enable when color changes price
             'size'         => $data['attributes']['attribute_pa_size'],
             'price'        => $data['display_price'],
         ];

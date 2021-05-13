@@ -36,8 +36,10 @@ if ( post_password_required() ) {
 require dirname(__FILE__) . '/../inc/prestige-puzzles-product.php';
 
 // Fetch the relevant attributes for the product's variations and format them
-// This is used on the pickers
-// (Color: M03 - Marble White; Size: 143 - 11 x 14)
+// This is used on the pickers, and only accounts for Sizes as Colors don't affect price.
+
+// Custom attributes Size & Color must be a) filled and b) marked for 'Use with variations'
+// However, only variations for price must exist.
 $variation_attributes = $product->get_variation_attributes();
 $variation_options = format_variation_attributes($variation_attributes);
 
@@ -155,7 +157,7 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
                 Don't see your size? We do custom-sized puzzles too!
             </p>
             <p>
-                To price your custom size -> <a href="#">Contact Us</a>
+                To price your custom size -> <a href="/contact">Contact Us</a>
             </p>
         </div>
     </div>
@@ -208,7 +210,7 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
 
 <?php
 // Don't run this code, this is just for reference:
-if (1 === 1):
+if (0 === 1):
 ?>
     <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
