@@ -9,8 +9,10 @@
  * @package Prestige_Puzzles
  */
 
-
 $theme_uri = get_template_directory_uri();
+require_once dirname(__FILE__) . '/inc/prestige-puzzles-helpers.php';
+global $post;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -63,17 +65,6 @@ $theme_uri = get_template_directory_uri();
 		</div><!-- .site-branding -->
         <?php endif;?>
 
-		<!--nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'prestige-puzzles' ); ?></button>
-			<?php
-			//wp_nav_menu(
-			//	array(
-			//		'theme_location' => 'menu-1',
-			//		'menu_id'        => 'primary-menu',
-			//	)
-			//);
-			?>
-		</nav--><!-- #site-navigation -->
         <div class="menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="logo">
@@ -85,21 +76,23 @@ $theme_uri = get_template_directory_uri();
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-center">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ship-to-us">How to ship to us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact</a>
-                        </li>
-                        <li class="nav-item frame">
-                            <a class="nav-link" href="/shop/puzzle">Plaque my puzzle</a>
-                        </li>
+                    <?php foreach (get_menu_items() as $link): ?>
+
+                            <?php
+                            $isActive  = ($link['post_slug'] === $post->post_name);
+                            $isClasses = isset($link['classes']);
+
+
+                            $li_classes =  ($isActive ? "active" : '') . ' '. ($isClasses ? $link['classes'] : '');
+                            ?>
+
+                            <li class="nav-item  <?=$li_classes?>">
+                                <a class="nav-link" href="<?=$link['post_url']?>">
+                                    <?=$link['text']?>
+                                </a>
+                            </li>
+
+                    <?php endforeach; ?>
                     </ul>
                 </div>
             </nav>

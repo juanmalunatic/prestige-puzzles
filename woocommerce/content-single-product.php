@@ -99,7 +99,11 @@ $var_with_prices_json   = array_to_jsondata($variations_with_prices);
                         <div class="swatches-color-item-holder">
                             <div class="swatches-color-item-selected-decorator"></div>
                             <div class="swatches-color-item-image">
-                                <!-- Image here -->
+                                <?php
+                                    $color_lower = mb_strtolower($color['part_one']);
+                                    $color_img_path = get_stylesheet_directory_uri() . '/img/colors/' . $color_lower . '.png';
+                                ?>
+                                <img src="<?=$color_img_path?>" />
                             </div>
                             <div class="swatches-color-item-texts">
                                 <div class="swatches-color-item-code">
