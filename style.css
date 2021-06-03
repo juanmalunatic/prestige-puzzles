@@ -417,6 +417,10 @@ h6 {
     clear: both;
 }
 
+h3 {
+    line-height: var(--line-height-large);
+}
+
 p {
     margin-bottom: 1.5em;
 }
@@ -1003,6 +1007,11 @@ input, input:focus, button:focus {
     display: flex;
 }
 
+.menu .navbar-nav .nav-link {
+    font-size: var(--font-size-small);
+    text-decoration: none;
+}
+
 .navbar-collapse {
     justify-content: flex-end;
 }
@@ -1045,7 +1054,6 @@ input, input:focus, button:focus {
     border-radius: 50px;
     line-height: 30px;
     font-weight: 600;
-    font-size: 14px;
 }
 
 .frame-puzzle {
@@ -1979,7 +1987,12 @@ Site-wide custom styles
     --p-purple-dark: #85599d;
     --p-yellow-dark: #ecc36a;
 
+    --p-purple-darkest: #6a3b84;
     --p-purple-lighter: #faf3ff;
+
+    --p-green: #71b989;
+    --p-blue-light: #61bde8;
+    --p-red: #ca3748;
 }
 
 .navbar {
@@ -2373,14 +2386,18 @@ General page styles
  */
 
 body {
-    --font-size-base: 1.1rem;
-    --line-height-base: 1.6;
+
+    --font-size-smaller: 0.85rem;
+    --line-height-smaller: 1.6;
 
     --font-size-small: 1rem;
     --line-height-small: 1.6;
 
-    --font-size-smaller: 0.85rem;
-    --line-height-smaller: 1.6;
+    --font-size-base: 1.1rem;
+    --line-height-base: 1.6;
+
+    --font-size-large: 1.8rem;
+    --line-height-large: 1.7;
 
     --font-size-largest: 2.2rem;
     --line-height-largest: 1.8;
@@ -2445,6 +2462,10 @@ a:hover {
     line-height: var(--line-height-small);
 }
 
+.text-size-smaller {
+    font-size: var(--font-size-smaller);
+    line-height: var(--line-height-smaller);
+}
 .text-style-bold {
     font-weight: 500;
 }
@@ -2455,6 +2476,10 @@ a:hover {
 
 .text-align-left {
     text-align: left;
+}
+
+.text-bold {
+    font-weight: 600;
 }
 
 .text-bold-smallcaps {
@@ -2511,7 +2536,9 @@ a:hover {
     height: 40px;
     width: 40px;
     display: inline-block;
-    background: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
     margin-right: 15px;
 }
 
@@ -2528,4 +2555,54 @@ a:hover {
 }
 .home-simage-gift {
     background-image: url('img/home/home-gift.png');
+}
+
+.white-hero-spacer {
+    width: 100%;
+    background: transparent;
+    height: 100px;
+}
+
+.text-purple-dark {
+    color: var(--p-purple-darkest);
+}
+.text-green {
+    color: var(--p-green);
+}
+.text-purple {
+    color: var(--p-purple-dark);
+}
+.text-yellow {
+    color: var(--p-yellow-dark);
+}
+.text-blue-light {
+    color: var(--p-blue-light);
+}
+.text-red {
+    color: var(--p-red);
+}
+
+.stats-highlight {
+    text-align: center;
+}
+
+.stats-highlight span {
+    display: block;
+}
+
+.stats-highlight-number {
+    font-size: var(--font-size-largest);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.section-gray {
+    background: #faf7fc;
+}
+.section-title-center {
+
 }
