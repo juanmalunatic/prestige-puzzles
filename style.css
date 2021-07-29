@@ -1412,7 +1412,7 @@ input, input:focus, button:focus {
 
 .workshop-box.arrow:after {
     content: '';
-    background-image: url("../img/Arrow.svg");
+    background-image: url("img/Arrow.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1426,7 +1426,7 @@ input, input:focus, button:focus {
 
 .workshop-box.arrow:before {
     content: '';
-    background-image: url("../img/Arrow.svg");
+    background-image: url("img/Arrow.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1458,7 +1458,7 @@ input, input:focus, button:focus {
 }
 
 .slide-content:after {
-    content: url("../img/tl.png");
+    content: url("img/tl.png");
     position: absolute;
     top: 0;
 }
