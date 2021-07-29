@@ -1037,13 +1037,62 @@ input, input:focus, button:focus {
 
 /* Special styles for the "Plaque my puzzle" button */
 
-.navbar-light .navbar-nav .frame .nav-link:hover {
+.navbar-light .navbar-nav .frame .nav-link:hover,
+.navbar-light .navbar-nav .active.frame .nav-link:hover,
+.navbar-light .navbar-nav .frame .nav-link:active,
+.navbar-light .navbar-nav .frame .nav-link:focus{
     color: #fff;
+    text-decoration: underline;
 }
 .navbar-expand-lg .navbar-nav .active.frame .nav-link {
     color: #fff;
     text-decoration: none;
 }
+
+/** BUTTONS **/
+
+.but {
+    background: #f90;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+.but-purple {
+    background: var(--p-purple-dark);
+}
+
+.btn-purple {
+    background: var(--p-purple-dark);
+    line-height: 64px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-block;
+    min-width: 276px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.but-purple,
+.but-purple:focus,
+.but-purple:visited,
+.but-purple:active,
+.btn-purple:focus,
+.btn-purple:visited,
+.btn-purple:active
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-purple:hover,
+.but-purple:hover {
+    text-decoration: underline;
+    color:#fff;
+}
+
+/** NAVBAR **/
 
 .navbar-expand-lg .navbar-nav .frame a {
     background-color: #85599D;
@@ -1087,21 +1136,6 @@ input, input:focus, button:focus {
     color: #303133;
     line-height: 27px;
     margin-bottom: 30px;
-}
-
-.btn-purple {
-    background-color: #85599D;
-    line-height: 64px;
-    color: #fff;
-    text-align: center;
-    border-radius: 50px;
-    display: inline-block;
-    min-width: 276px;
-    font-weight: 600;
-}
-
-.btn-purple:hover {
-    color: #fff;
 }
 
 .frame-puzzle-button a {
@@ -2509,21 +2543,6 @@ a:hover {
     align-items: center;
 }
 
-.but {
-    background: #f90;
-    border-radius: 20px;
-    padding: 15px;
-    text-align: center;
-}
-.but-purple {
-    background: var(--p-purple-dark);
-}
-.but-purple,
-.but-purple:focus,
-.but-purple:visited {
-    color: #fff;
-    text-decoration: none;
-}
 
 /* Home */
 
