@@ -19,29 +19,27 @@ $dirname = dirname(__FILE__);
 	<main id="primary" class="site-main">
 
         <?php
-        // Homepage uses a static template
-        if (is_home() || is_front_page()) {
-            require $dirname . '/pages/homepage.php';
-        }
-
         // Decide which kind of template the current page uses
         global $pagename;
         $pagesStatic  = ["about", "ship-to-us", "contact"];
-        $pagesContent = ["cart"];
 
-        // Content-based (i.e. user editable, useful for shortcodes like [woocommerce_cart]
-        if (in_array($pagename, $pagesContent )) {
-            get_template_part( 'template-parts/content', 'page' );
-        }
+        // Homepage uses a static template
+        if (is_home() || is_front_page()) {
+            require $dirname . '/pages/homepage.php';
+
         // Template-based (i.e. non-user editable, live inside pages/)
-        else if (in_array($pagename, $pagesStatic)) {
+        } else if (in_array($pagename, $pagesStatic)) {
             $filename = $dirname . "/pages/{$pagename}.php";
             if (is_file($filename))
                 require $filename;
             else
                 echo "Please create a template for this page under <tt>pages/{$pagename}.php</tt>
-                      or convert it to editable by modifying <tt>\$pagesContent</tt> on <tt>page.php</tt>. <br />
+                      or convert it to editable by removing this page's slug from <tt>\$pagesStatic</tt> on <tt>page.php</tt>. <br />
                       Base directory: <tt>/wp-content/themes/prestige-puzzles/</tt>";
+
+        // Content-based (i.e. user editable, useful for shortcodes like [woocommerce_cart] and
+        } else {
+            get_template_part( 'template-parts/content', 'page' );
         }
         ?>
 		<?php
