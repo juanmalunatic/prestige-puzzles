@@ -2651,12 +2651,12 @@ a:hover {
     font-size: 0.9rem;
 }
 
-.site-main {
+.woocommerce-page.woocommerce-cart .site-main {
     margin-top: 80px;
 }
 
 @media (min-width: 1200px) {
-    .site-main {
+    .woocommerce-page.woocommerce-cart .site-main {
         width: 100%;
         max-width: 1062px;
         margin-right:auto;
@@ -2715,4 +2715,56 @@ a:hover {
 
 .wc-proceed-to-checkout {
     font-size: 0.9rem;
+}
+
+/* Checkout */
+.woocommerce-page.woocommerce-checkout .site-main {
+    margin-top: 80px;
+}
+
+@media (min-width: 1200px) {
+    .woocommerce-page.woocommerce-checkout  .site-main {
+        width: 100%;
+        max-width: 1062px;
+        margin-right:auto;
+        margin-left: auto;
+    }
+}
+
+#customer_details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#customer_details.col2-set .col-1 {
+    width: 100%;
+    max-width: none;
+    flex: none;
+    padding: 0;
+}
+
+#customer_details.col2-set .col-2 {
+    width: 100%;
+    max-width: none;
+    flex: none;
+    padding: 0;
+}
+
+#customer_details.col2-set::after, #customer_details.col2-set::before {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    #customer_details.col2-set .col-1 {
+        width: 50%;
+    }
+    #customer_details.col2-set .col-2 {
+        width: 35%;
+    }
+}
+
+.woocommerce-page.woocommerce-checkout .woocommerce-input-wrapper {
+    display: block;
+    width: 100%;
 }
