@@ -6,6 +6,7 @@ $tpurl = get_template_directory_uri();
 
 <div class="section section-white pb-5">
     <div class="container pb-5">
+        <!-- two buttons and image -->
         <div class="row">
             <div class="col-xs-12 col-md-7 col-lg-6">
                 <div class="text-size-largest text-style-bold pt-4">
@@ -35,31 +36,36 @@ $tpurl = get_template_directory_uri();
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-6 pl-5 pr-2">
+                <div id="home-framed-puzzle" class="ml-3"></div>
+            </div>
+        </div>
+        <!-- three icons -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 three-icons">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12 mt4-sm col-lg-4 align-items-center-flex text-align-left">
-                            <div class="home-simage home-simage-lock"></div>
-                            <div class="home-simage-text text-bold-smallcaps">
-                                Secure Shipping
-                            </div>
+                <div class="row">
+                    <div class="col-xs-12 mt4-sm col-sm-4 align-items-center-flex text-align-left">
+                        <div class="home-simage home-simage-lock"></div>
+                        <div class="home-simage-text text-bold-smallcaps">
+                            Secure Shipping
                         </div>
-                        <div class="col-xs-12 mt4-sm col-lg-4 align-items-center-flex text-align-left">
-                            <div class="home-simage home-simage-heart"></div>
-                            <div class="home-simage-text text-bold-smallcaps">
-                                Careful Handling
-                            </div>
+                    </div>
+                    <div class="col-xs-12 mt4-sm col-sm-4 align-items-center-flex text-align-left">
+                        <div class="home-simage home-simage-heart"></div>
+                        <div class="home-simage-text text-bold-smallcaps">
+                            Careful Handling
                         </div>
-                        <div class="col-xs-12 mt4-sm col-lg-4 align-items-center-flex text-align-left">
-                            <div class="home-simage home-simage-gift"></div>
-                            <div class="home-simage-text text-bold-smallcaps">
-                                Safe Return
-                            </div>
+                    </div>
+                    <div class="col-xs-12 mt4-sm col-sm-4 align-items-center-flex text-align-left">
+                        <div class="home-simage home-simage-gift"></div>
+                        <div class="home-simage-text text-bold-smallcaps">
+                            Safe Return
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-5 col-lg-6 pl-5 pr-2">
-                <div id="home-framed-puzzle" class="ml-3"></div>
             </div>
         </div>
     </div>
