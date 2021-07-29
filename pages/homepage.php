@@ -112,7 +112,8 @@ $tpurl = get_template_directory_uri();
     </div>
 </div>
 
-<section class="puzzle-numbers">
+<div class="section">
+    <section class="puzzle-numbers">
     <h2>
         You spent endless recreational hours piecing your puzzle, it would be a shame to…
     </h2>
@@ -122,8 +123,10 @@ $tpurl = get_template_directory_uri();
         <li><span class="icon-three">3</span>haphazardly glue it onto a cardboard backing.</li>
     </ul>
 </section>
+</div>
 
-<section class="add-pizzazz">
+<div class="section">
+    <section class="add-pizzazz">
     <h2>Add pizzazz to your puzzle...</h2>
     <div class="container p-0">
         <div class="row">
@@ -158,8 +161,10 @@ $tpurl = get_template_directory_uri();
         </div>
     </div>
 </section>
+</div>
 
-<section class="sensation">
+<div class="section">
+    <section class="sensation">
     <h2>Turn your puzzle creation into an art sensation</h2>
     <div class="container p-0">
         <div class="row">
@@ -197,8 +202,10 @@ $tpurl = get_template_directory_uri();
         <a href="#" class="btn-purple">Frame my puzzle</a>
     </div>
 </section>
+</div>
 
-<section class="workshop">
+<div class="section">
+    <section class="workshop">
     <h2>Here’s how you can be sure your puzzle gets to our workshop in one piece.</h2>
     <div class="workshop-row">
         <div class="workshop-box">
@@ -216,8 +223,10 @@ $tpurl = get_template_directory_uri();
     </div>
     <a href="#">Step-by-Step shipping directions </a>
 </section>
+</div>
 
-<section class="slide-content">
+<div class="section">
+    <section class="slide-content">
     <div class="slide-content-container">
         <div class="swiper-container swiper-slider">
             <div class="swiper-wrapper">
@@ -255,8 +264,10 @@ $tpurl = get_template_directory_uri();
         </div>
     </div>
 </section>
+</div>
 
-<section class="puzzle-facts">
+<div class="section">
+    <section class="puzzle-facts">
     <div class="puzzle-facts-swiper swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -296,8 +307,10 @@ $tpurl = get_template_directory_uri();
         <div class="swiper-pagination"></div>
     </div>
 </section>
+</div>
 
-<section class="art-gallery">
+<div class="section">
+    <section class="art-gallery">
     <div class="art-gallery-info">
         <h2>In 14 days, your puzzle will be an art gallery masterpiece!</h2>
         <p>
@@ -311,3 +324,4 @@ $tpurl = get_template_directory_uri();
         </div>
     </div>
 </section>
+</div>

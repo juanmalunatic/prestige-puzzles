@@ -2033,11 +2033,18 @@ Site-wide custom styles
     margin-bottom: auto;
 }
 
+.sc-fw {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
 .section-horizontal {
     padding-top: 80px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 80px;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 .section-horizontal-purple {
